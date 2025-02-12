@@ -37,9 +37,9 @@
             float: none;
             margin: 0 auto;
         }
-        .coin-grid{
+        .coin-grid-2{
             display: grid;
-            grid-template-columns: repeat(5, 1fr);
+            grid-template-columns: 1fr 3fr;
             text-align: center;
             gap: 20px;
         }
@@ -106,21 +106,58 @@
         This is the best place to get 8 Ball Pool coins.
     </div>
     <div class="container">
-        <div class="coin-grid">
+        <div class="coin-grid-2">
             <div class="coin-box">
                 <div class="coin-img">
                     <img src="img/coins.png" alt="" width="70%">
                 </div>
                 <div class="coin-text">
-                    <div class="price-text">100K Coins</div>
-                    <div class="price">$2.99</div>
+                    <div class="price-text"><span class="coin-qty"></span> Coins</div>
+                    <div class="price"></div>
                     <div>
-                        <a class="buy-btn" href="buy-8-ball-coins.html#100k">BUY NOW</a>
+                        
                     </div>
                 </div>
             </div>
-            
+            <div>
+                    <b>How can I buy?</b> <br>
+                    Please contact us via telegram. Our customer service will lead you to complete the process. <br>
+                    <a href="https://t.me/+IdSCBLDHA_A3YmE0">Telegram URL</a>
+            </div>
         </div>
     </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+    const products = [
+        {
+            name: "100K Coins",
+            price: "2.99"
+        },
+        {
+            name: "1M Coins",
+            price: "3.99"
+        },
+        {
+            name: "5M Coins",
+            price: "7.99"
+        },
+        {
+            name: "10M Coins",
+            price: "9.99"
+        },
+        {
+            name: "20M Coins",
+            price: "14.99"
+        },
+    ];
+    const hash = window.location.hash;
+    const pack = hash.split("#")[1];
+    const item = products[parseInt(pack)];
+    //console.log(products[parseInt(pack)])
+    document.querySelector(".coin-qty").textContent = item.name;
+    document.querySelector(".price").textContent = "$"+item.price;
+
+    
+</script>
 </body>
 </html>

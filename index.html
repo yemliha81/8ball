@@ -107,67 +107,58 @@
     </div>
     <div class="container">
         <div class="coin-grid">
-            <div class="coin-box">
-                <div class="coin-img">
-                    <img src="img/coins.png" alt="" width="70%">
-                </div>
-                <div class="coin-text">
-                    <div class="price-text">100K Coins</div>
-                    <div class="price">$2.99</div>
-                    <div>
-                        <a class="buy-btn" href="buy-8-ball-coins.html#100k">BUY NOW</a>
-                    </div>
-                </div>
-            </div>
-            <div class="coin-box">
-                <div class="coin-img">
-                    <img src="img/coins.png" alt="" width="70%">
-                </div>
-                <div class="coin-text">
-                    <div class="price-text">1M Coins</div>
-                    <div class="price">$3.99</div>
-                    <div>
-                        <a class="buy-btn" href="buy-8-ball-coins.html#1m">BUY NOW</a>
-                    </div>
-                </div>
-            </div>
-            <div class="coin-box">
-                <div class="coin-img">
-                    <img src="img/coins.png" alt="" width="70%">
-                </div>
-                <div class="coin-text">
-                    <div class="price-text">5M Coins</div>
-                    <div class="price">$7.99</div>
-                    <div>
-                        <a class="buy-btn" href="buy-8-ball-coins.html#5m">BUY NOW</a>
-                    </div>
-                </div>
-            </div>
-            <div class="coin-box">
-                <div class="coin-img">
-                    <img src="img/coins.png" alt="" width="70%">
-                </div>
-                <div class="coin-text">
-                    <div class="price-text">10M Coins</div>
-                    <div class="price">$9.99</div>
-                    <div>
-                        <a class="buy-btn" href="buy-8-ball-coins.html#10m">BUY NOW</a>
-                    </div>
-                </div>
-            </div>
-            <div class="coin-box">
-                <div class="coin-img">
-                    <img src="img/coins.png" alt="" width="70%">
-                </div>
-                <div class="coin-text">
-                    <div class="price-text">20M Coins</div>
-                    <div class="price">$14.99</div>
-                    <div>
-                        <a class="buy-btn" href="buy-8-ball-coins.html#20m">BUY NOW</a>
-                    </div>
-                </div>
-            </div>
+            
+            
         </div>
     </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+
+    const products = [
+        {
+            name: "100K Coins",
+            price: "2.99",
+            key: 0
+        },
+        {
+            name: "1M Coins",
+            price: "3.99",
+            key: 1
+        },
+        {
+            name: "5M Coins",
+            price: "7.99",
+            key: 2
+        },
+        {
+            name: "10M Coins",
+            price: "9.99",
+            key: 3
+        },
+        {
+            name: "20M Coins",
+            price: "14.99",
+            key: 4
+        },
+    ];
+
+    products.forEach(function(item){
+        let newItem = '<div class="coin-box">\
+                <div class="coin-img">\
+                    <img src="img/coins.png" alt="" width="70%">\
+                </div>\
+                <div class="coin-text">\
+                    <div class="price-text">'+item.name+'</div>\
+                    <div class="price">$'+item.price+'</div>\
+                    <div>\
+                        <a class="buy-btn" href="buy-8-ball-coins.html#'+item.key+'">BUY NOW</a>\
+                    </div>\
+                </div>\
+            </div>';
+        $('.coin-grid').append(newItem);
+    })
+
+</script>
+
 </body>
 </html>
